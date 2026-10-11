@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Slide 14 – Textarea, Select & Datalist</title>
+  <style>
+    body {
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .slide {
+      background: #ffffff;
+      width: 92%;
+      max-width: 1000px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+      padding: 40px 50px;
+      animation: fadeIn 0.8s ease;
+      position: relative;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+    .logo { display: flex; justify-content: center; margin-bottom: 18px; }
+    .logo img { max-height: 60px; width: auto; }
+
+    h1 { text-align: center; font-size: 2.3rem; color: #0f172a; margin-bottom: 8px; }
+    h2 { font-size: 1.4rem; color: #0369a1; margin-top: 28px; margin-bottom: 10px; }
+    p, li { line-height: 1.7; font-size: 1.02rem; }
+    ul, ol { margin-left: 20px; }
+    input, textarea, select, button { padding: 8px; margin: 6px 0; border-radius: 6px; border: 1px solid #0f172a; font-size: 1rem; width: 100%; }
+
+    .section {
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      margin-top: 15px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .section:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+
+    pre {
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; }
+    .btn {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    .btn:hover { background: #0369a1; }
+    .footer-note { text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 12px; }
+
+    @media (max-width: 700px) { .slide { padding: 30px 24px; } h1 { font-size: 1.8rem; } input, textarea, select, button { font-size: 0.95rem; } }
+  </style>
+</head>
+<body>
+  <div class="slide">
+
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="your-logo.png" alt="Your Coaching Logo">
+    </div>
+
+    <h1>HTML Textarea, Select & Datalist</h1>
+
+    <div class="section">
+      <h2>💡 Textarea</h2>
+      <p>&lt;textarea&gt; is used for multi-line text input. You can control rows, columns, and placeholder text.</p>
+    </div>
+
+    <div class="section">
+      <h2>💡 Select & Option</h2>
+      <p>&lt;select&gt; creates a dropdown menu, and &lt;option&gt; defines the selectable items.</p>
+    </div>
+
+    <div class="section">
+      <h2>💡 Datalist</h2>
+      <p>&lt;datalist&gt; provides a list of predefined options for an input field. Users can type or select from suggestions.</p>
+    </div>
+
+    <div class="section">
+      <h2>📖 Example Form</h2>
+      <pre><code>&lt;form action="/submit" method="post"&gt;
+
+  &lt;label&gt;Message:&lt;/label&gt;
+  &lt;textarea name="message" rows="4" placeholder="Enter your message"&gt;&lt;/textarea&gt;
+
+  &lt;label&gt;Choose a country:&lt;/label&gt;
+  &lt;select name="country"&gt;
+    &lt;option&gt;India&lt;/option&gt;
+    &lt;option&gt;USA&lt;/option&gt;
+    &lt;option&gt;UK&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label&gt;Favorite Browser:&lt;/label&gt;
+  &lt;input list="browsers" name="browser" placeholder="Select or type browser"&gt;
+  &lt;datalist id="browsers"&gt;
+    &lt;option value="Chrome"&gt;
+    &lt;option value="Firefox"&gt;
+    &lt;option value="Safari"&gt;
+    &lt;option value="Edge"&gt;
+  &lt;/datalist&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+&lt;/form&gt;
+</code></pre>
+    </div>
+
+    <div class="section">
+      <h2>🎯 Best Practices</h2>
+      <ul>
+        <li>Use <strong>rows</strong> and <strong>cols</strong> to control textarea size</li>
+        <li>Always include a <strong>label</strong> for accessibility</li>
+        <li>Use <strong>datalist</strong> for input suggestions to improve UX</li>
+        <li>Keep dropdown menus concise and organized</li>
+        <li>Combine placeholder text with label for clarity</li>
+      </ul>
+    </div>
+
+    <div class="nav">
+      <a href="slide13.html" class="btn">← Previous</a>
+      <a href="slide15.html" class="btn">Next →</a>
+    </div>
+
+    <div class="footer-note">Slide 14 – Textarea, Select & Datalist</div>
+  </div>
+</body>
+</html>

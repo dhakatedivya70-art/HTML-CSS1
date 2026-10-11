@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Slide 12 – HTML Form Input Types</title>
+  <style>
+    body {
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .slide {
+      background: #ffffff;
+      width: 92%;
+      max-width: 1000px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+      padding: 40px 50px;
+      animation: fadeIn 0.8s ease;
+      position: relative;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+    .logo { display: flex; justify-content: center; margin-bottom: 18px; }
+    .logo img { max-height: 60px; width: auto; }
+
+    h1 { text-align: center; font-size: 2.3rem; color: #0f172a; margin-bottom: 8px; }
+    h2 { font-size: 1.4rem; color: #0369a1; margin-top: 28px; margin-bottom: 10px; }
+    p, li { line-height: 1.7; font-size: 1.02rem; }
+    ul, ol { margin-left: 20px; }
+    input, textarea, select, button { padding: 8px; margin: 6px 0; border-radius: 6px; border: 1px solid #0f172a; font-size: 1rem; width: 100%; }
+
+    .section {
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      margin-top: 15px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .section:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+
+    pre {
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; }
+    .btn {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    .btn:hover { background: #0369a1; }
+    .footer-note { text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 12px; }
+
+    @media (max-width: 700px) { .slide { padding: 30px 24px; } h1 { font-size: 1.8rem; } input, textarea, select, button { font-size: 0.95rem; } }
+  </style>
+</head>
+<body>
+  <div class="slide">
+
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="your-logo.png" alt="Your Coaching Logo">
+    </div>
+
+    <h1>HTML Form Input Types</h1>
+
+    <div class="section">
+      <h2>💡 Introduction</h2>
+      <p>HTML input types define the type of data a user can enter into a form field. Using the correct input type helps with validation, user experience, and accessibility.</p>
+    </div>
+
+    <div class="section">
+      <h2>📌 Common Input Types</h2>
+      <ul>
+        <li><strong>text</strong> – single-line text input</li>
+        <li><strong>email</strong> – input for email addresses</li>
+        <li><strong>password</strong> – hides user input for security</li>
+        <li><strong>number</strong> – input for numeric values</li>
+        <li><strong>date</strong> – input for selecting a date</li>
+        <li><strong>time</strong> – input for time</li>
+        <li><strong>url</strong> – input for web addresses</li>
+        <li><strong>tel</strong> – input for phone numbers</li>
+        <li><strong>color</strong> – input for selecting a color</li>
+        <li><strong>range</strong> – slider input for numeric range</li>
+        <li><strong>checkbox</strong> – multiple selection options</li>
+        <li><strong>radio</strong> – single selection among options</li>
+        <li><strong>file</strong> – upload file from user device</li>
+        <li><strong>submit</strong> – submit form</li>
+        <li><strong>reset</strong> – reset form values</li>
+        <li><strong>button</strong> – custom button for JavaScript actions</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📖 Example Form with Multiple Input Types</h2>
+      <pre><code>&lt;form action="/submit" method="post"&gt;
+  &lt;label&gt;Name:&lt;/label&gt;
+  &lt;input type="text" name="name" required&gt;
+
+  &lt;label&gt;Email:&lt;/label&gt;
+  &lt;input type="email" name="email" required&gt;
+
+  &lt;label&gt;Password:&lt;/label&gt;
+  &lt;input type="password" name="password" required&gt;
+
+  &lt;label&gt;Age:&lt;/label&gt;
+  &lt;input type="number" name="age" min="1" max="120"&gt;
+
+  &lt;label&gt;Date of Birth:&lt;/label&gt;
+  &lt;input type="date" name="dob"&gt;
+
+  &lt;label&gt;Gender:&lt;/label&gt;
+  &lt;input type="radio" name="gender" value="Male"&gt; Male
+  &lt;input type="radio" name="gender" value="Female"&gt; Female
+
+  &lt;label&gt;Hobbies:&lt;/label&gt;
+  &lt;input type="checkbox" name="hobby" value="Reading"&gt; Reading
+  &lt;input type="checkbox" name="hobby" value="Sports"&gt; Sports
+
+  &lt;label&gt;Select Country:&lt;/label&gt;
+  &lt;select name="country"&gt;
+    &lt;option&gt;India&lt;/option&gt;
+    &lt;option&gt;USA&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label&gt;Upload File:&lt;/label&gt;
+  &lt;input type="file" name="resume"&gt;
+
+  &lt;label&gt;Pick Color:&lt;/label&gt;
+  &lt;input type="color" name="color"&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+    </div>
+
+    <div class="section">
+      <h2>🎯 Best Practices</h2>
+      <ul>
+        <li>Use proper input types to enable built-in validation</li>
+        <li>Always use <strong>label</strong> for accessibility</li>
+        <li>Set min/max values for number and range inputs</li>
+        <li>Use placeholder text as guidance, not replacement for labels</li>
+        <li>Group radio buttons with the same <strong>name</strong> attribute</li>
+        <li>Use required attribute for mandatory fields</li>
+      </ul>
+    </div>
+
+    <div class="nav">
+      <a href="slide11.html" class="btn">← Previous</a>
+      <a href="slide13.html" class="btn">Next →</a>
+    </div>
+
+    <div class="footer-note">Slide 12 – HTML Form Input Types</div>
+  </div>
+</body>
+</html>

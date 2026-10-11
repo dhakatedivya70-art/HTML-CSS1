@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Slide 4 – HTML Headings</title>
+    <style>
+        body {
+            font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            margin: 0;
+            background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            background: #ffffff;
+            width: 92%;
+            max-width: 1000px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+            padding: 40px 50px;
+            animation: fadeIn 0.8s ease;
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .logo img {
+            max-height: 60px;
+            width: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.3rem;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #0369a1;
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+
+        p,
+        li {
+            line-height: 1.7;
+            font-size: 1.02rem;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        .section {
+            background: #f9fafb;
+            border-radius: 14px;
+            padding: 18px 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            margin-top: 15px;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        pre {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 16px;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background: #0284c7;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #0369a1;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .slide {
+                padding: 30px 24px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide">
+
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="scalive.png" alt="Your Coaching Logo">
+        </div>
+
+        <h1>HTML Headings</h1>
+
+        <div class="section">
+            <h2>💡 What are Headings?</h2>
+            <p>Heading tags are used to define titles and subtitles on a webpage. They range from
+                <strong>&lt;h1&gt;</strong> (most important) to <strong>&lt;h6&gt;</strong> (least important).</p>
+        </div>
+
+        <div class="section">
+            <h2>📏 Heading Sizes</h2>
+            <ul>
+                <li><strong>&lt;h1&gt;</strong> → Largest, main page title (~32px)</li>
+                <li><strong>&lt;h2&gt;</strong> → Section title (~24px)</li>
+                <li><strong>&lt;h3&gt;</strong> → Subsection heading (~20px)</li>
+                <li><strong>&lt;h4&gt;</strong> → Smaller heading (~16px)</li>
+                <li><strong>&lt;h5&gt;</strong> → Even smaller (~14px)</li>
+                <li><strong>&lt;h6&gt;</strong> → Smallest heading (~12px)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📝 Syntax</h2>
+            <pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection&lt;/h3&gt;
+...
+&lt;h6&gt;Smallest Heading&lt;/h6&gt;
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>📖 Example</h2>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Heading Example&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;        &lt;!-- 32px --&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;        &lt;!-- 24px --&gt;
+    &lt;h3&gt;Subsection&lt;/h3&gt;          &lt;!-- 20px --&gt;
+    &lt;h4&gt;Minor Section&lt;/h4&gt;       &lt;!-- 16px --&gt;
+    &lt;h5&gt;Small Heading&lt;/h5&gt;       &lt;!-- 14px --&gt;
+    &lt;h6&gt;Tiny Heading&lt;/h6&gt;        &lt;!-- 12px --&gt;
+    &lt;p&gt;This is a paragraph under the subheading.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Why Only One H1?</h2>
+            <ul>
+                <li><strong>SEO:</strong> Search engines recognize H1 as the main topic of the page.</li>
+                <li><strong>Accessibility:</strong> Screen readers use H1 to identify main page content.</li>
+                <li><strong>Structure:</strong> Helps maintain proper hierarchical content flow.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Best Practices</h2>
+            <ul>
+                <li>Use one <strong>&lt;h1&gt;</strong> per page (main heading).</li>
+                <li>Follow proper hierarchy: <strong>h1 → h2 → h3 …</strong></li>
+                <li>Keep headings concise, meaningful, and descriptive.</li>
+                <li>Use headings to improve readability, SEO, and accessibility.</li>
+            </ul>
+        </div>
+
+        <div class="nav">
+            <a href="slide3.html" class="btn">← Previous</a>
+            <a href="slide5.html" class="btn">Next →</a>
+        </div>
+
+        <div class="footer-note">Slide 4 – HTML Headings</div>
+    </div>
+</body>
+
+</html>

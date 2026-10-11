@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Slide 0 – Introduction to Frontend Development</title>
+  <style>
+    /* ---------- Base Layout ---------- */
+    body {
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .slide {
+      background: #ffffff;
+      width: 92%;
+      max-width: 1000px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+      padding: 40px 50px;
+      animation: fadeIn 0.8s ease;
+      position: relative;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- Logo ---------- */
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .logo img {
+      max-height: 60px;
+      width: auto;
+    }
+
+    /* ---------- Typography ---------- */
+    h1 {
+      text-align: center;
+      font-size: 2.3rem;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #0369a1;
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+    p, li {
+      line-height: 1.7;
+      font-size: 1.02rem;
+    }
+    ul { margin-left: 20px; }
+
+    /* ---------- Decorative Cards ---------- */
+    .section {
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      margin-top: 15px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    /* ---------- Table ---------- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.98rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+
+    /* ---------- Info Cards ---------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .card {
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      transition: transform .3s ease;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card strong { color: #075985; }
+
+    /* ---------- Footer Navigation ---------- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .btn {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    .btn:hover { background: #0369a1; }
+    .footer-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .slide { padding: 30px 24px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="scalive.png" alt="scalive Logo">
+    </div>
+
+    <h1>Introduction to Frontend Development</h1>
+
+    <div class="section">
+      <h2>💡 What is Frontend Development?</h2>
+      <p>Frontend development is the <strong>visual and interactive layer</strong> of a website — everything users see and use directly in their web browsers. It involves translating design mockups into responsive, functional pages using web technologies.</p>
+    </div>
+
+    <div class="section">
+      <h2>🧭 Why Frontend Matters?</h2>
+      <ul>
+        <li>Provides a visually engaging and user-friendly interface.</li>
+        <li>Ensures seamless experiences across devices and screen sizes.</li>
+        <li>Acts as the bridge between the user and the backend systems.</li>
+        <li>Improves usability, accessibility, and overall brand experience.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🏗️ Pillars of Frontend Development</h2>
+      <table>
+        <thead>
+          <tr><th>Technology</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>HTML</strong></td><td>Defines the structure and layout of web content.</td></tr>
+          <tr><td><strong>CSS</strong></td><td>Adds style, colors, and responsive layouts.</td></tr>
+          <tr><td><strong>JavaScript</strong></td><td>Brings interactivity and dynamic functionality.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>🌍 The Origin of HTML</h2>
+      <div class="cards">
+        <div class="card">
+          <strong>Who Created HTML?</strong>
+          <p>HTML was developed by <strong>Tim Berners-Lee</strong> in <strong>1991</strong> while working at <strong>CERN</strong>.</p>
+        </div>
+        <div class="card">
+          <strong>Why Was HTML Created?</strong>
+          <p>To make it easy for researchers to share and link documents across computers — forming the foundation of the <strong>World Wide Web</strong>.</p>
+        </div>
+        <div class="card">
+          <strong>Evolution</strong>
+          <p>HTML evolved from simple document sharing to a robust markup language (HTML 5+) supporting media, APIs, and modern web apps.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <a href="#" class="btn" style="visibility:hidden;">← Previous</a>
+      <a href="slide1.html" class="btn">Next →</a>
+    </div>
+
+    <div class="footer-note">Slide 0 – Introduction to Frontend Development</div>
+  </div>
+</body>
+</html>

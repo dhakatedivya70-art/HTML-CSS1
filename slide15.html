@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Slide 15 – Buttons, Fieldset & Legend</title>
+  <style>
+    body {
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .slide {
+      background: #ffffff;
+      width: 92%;
+      max-width: 1000px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+      padding: 40px 50px;
+      animation: fadeIn 0.8s ease;
+      position: relative;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+    .logo { display: flex; justify-content: center; margin-bottom: 18px; }
+    .logo img { max-height: 60px; width: auto; }
+
+    h1 { text-align: center; font-size: 2.3rem; color: #0f172a; margin-bottom: 8px; }
+    h2 { font-size: 1.4rem; color: #0369a1; margin-top: 28px; margin-bottom: 10px; }
+    p, li { line-height: 1.7; font-size: 1.02rem; }
+    ul, ol { margin-left: 20px; }
+    input, textarea, select, button { padding: 8px; margin: 6px 0; border-radius: 6px; border: 1px solid #0f172a; font-size: 1rem; width: 100%; }
+
+    .section {
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      margin-top: 15px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .section:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+
+    pre {
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; }
+    .btn {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    .btn:hover { background: #0369a1; }
+    .footer-note { text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 12px; }
+
+    @media (max-width: 700px) { .slide { padding: 30px 24px; } h1 { font-size: 1.8rem; } input, textarea, select, button { font-size: 0.95rem; } }
+  </style>
+</head>
+<body>
+  <div class="slide">
+
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="your-logo.png" alt="Your Coaching Logo">
+    </div>
+
+    <h1>HTML Buttons, Fieldset & Legend</h1>
+
+    <div class="section">
+      <h2>💡 Buttons</h2>
+      <p>HTML <strong>&lt;button&gt;</strong> is used to create clickable buttons. Types include:</p>
+      <ul>
+        <li><strong>submit</strong> – submits the form</li>
+        <li><strong>reset</strong> – resets all form fields</li>
+        <li><strong>button</strong> – custom button for JavaScript actions</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>💡 Fieldset & Legend</h2>
+      <p><strong>&lt;fieldset&gt;</strong> groups related form elements. <strong>&lt;legend&gt;</strong> provides a caption for the fieldset.</p>
+    </div>
+
+    <div class="section">
+      <h2>📖 Example Form</h2>
+      <pre><code>&lt;form action="/submit" method="post"&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Personal Information&lt;/legend&gt;
+
+    &lt;label&gt;Name:&lt;/label&gt;
+    &lt;input type="text" name="name" required&gt;
+
+    &lt;label&gt;Email:&lt;/label&gt;
+    &lt;input type="email" name="email" required&gt;
+
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Preferences&lt;/legend&gt;
+
+    &lt;label&gt;Subscribe to Newsletter:&lt;/label&gt;
+    &lt;input type="checkbox" name="newsletter"&gt;
+
+    &lt;label&gt;Choose a Plan:&lt;/label&gt;
+    &lt;select name="plan"&gt;
+      &lt;option&gt;Free&lt;/option&gt;
+      &lt;option&gt;Premium&lt;/option&gt;
+      &lt;option&gt;Enterprise&lt;/option&gt;
+    &lt;/select&gt;
+
+  &lt;/fieldset&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;button type="reset"&gt;Reset&lt;/button&gt;
+  &lt;button type="button" onclick="alert('Hello!')"&gt;Click Me&lt;/button&gt;
+
+&lt;/form&gt;
+</code></pre>
+    </div>
+
+    <div class="section">
+      <h2>🎯 Best Practices</h2>
+      <ul>
+        <li>Use <strong>fieldset</strong> to logically group related fields</li>
+        <li>Use <strong>legend</strong> for accessible captions</li>
+        <li>Choose appropriate button types for intended action</li>
+        <li>Use descriptive text for buttons for better UX</li>
+        <li>Combine buttons with JavaScript for dynamic functionality</li>
+      </ul>
+    </div>
+
+    <div class="nav">
+      <a href="slide14.html" class="btn">← Previous</a>
+      <a href="slide16.html" class="btn">Next →</a>
+    </div>
+
+    <div class="footer-note">Slide 15 – Buttons, Fieldset & Legend</div>
+  </div>
+</body>
+</html>

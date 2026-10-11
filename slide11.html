@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Slide 11 – HTML Forms</title>
+  <style>
+    body {
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .slide {
+      background: #ffffff;
+      width: 92%;
+      max-width: 1000px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+      padding: 40px 50px;
+      animation: fadeIn 0.8s ease;
+      position: relative;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+    .logo { display: flex; justify-content: center; margin-bottom: 18px; }
+    .logo img { max-height: 60px; width: auto; }
+
+    h1 { text-align: center; font-size: 2.3rem; color: #0f172a; margin-bottom: 8px; }
+    h2 { font-size: 1.4rem; color: #0369a1; margin-top: 28px; margin-bottom: 10px; }
+    p, li { line-height: 1.7; font-size: 1.02rem; }
+    ul, ol { margin-left: 20px; }
+    input, textarea, select, button { padding: 8px; margin: 6px 0; border-radius: 6px; border: 1px solid #0f172a; font-size: 1rem; width: 100%; }
+
+    .section {
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      margin-top: 15px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .section:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+
+    pre {
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; }
+    .btn {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    .btn:hover { background: #0369a1; }
+    .footer-note { text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 12px; }
+
+    @media (max-width: 700px) { .slide { padding: 30px 24px; } h1 { font-size: 1.8rem; } input, textarea, select, button { font-size: 0.95rem; } }
+  </style>
+</head>
+<body>
+  <div class="slide">
+
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="your-logo.png" alt="Your Coaching Logo">
+    </div>
+
+    <h1>HTML Forms</h1>
+
+    <div class="section">
+      <h2>💡 What is a Form?</h2>
+      <p>An HTML form is used to collect user input. It can submit data to a server for processing using methods like GET or POST.</p>
+    </div>
+
+    <div class="section">
+      <h2>📌 Importance of Forms</h2>
+      <ul>
+        <li>Collect user information (name, email, feedback)</li>
+        <li>Enable user authentication (login/signup)</li>
+        <li>Supports surveys, polls, and registrations</li>
+        <li>Crucial for interactive web applications</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📌 Common Form Elements</h2>
+      <ul>
+        <li><strong>&lt;form&gt;</strong> – container for all form elements</li>
+        <li><strong>&lt;input&gt;</strong> – different types of user input (text, email, password, number, radio, checkbox, date)</li>
+        <li><strong>&lt;textarea&gt;</strong> – multi-line text input</li>
+        <li><strong>&lt;select&gt;</strong> and <strong>&lt;option&gt;</strong> – dropdown menu</li>
+        <li><strong>&lt;button&gt;</strong> – submit, reset, or custom actions</li>
+        <li><strong>&lt;label&gt;</strong> – associate text with input for accessibility</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📖 Example Form</h2>
+      <pre><code>&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" placeholder="Enter your name" required&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" placeholder="Enter your email" required&gt;
+
+  &lt;label for="gender"&gt;Gender:&lt;/label&gt;
+  &lt;input type="radio" name="gender" value="Male"&gt; Male
+  &lt;input type="radio" name="gender" value="Female"&gt; Female
+
+  &lt;label for="hobby"&gt;Hobbies:&lt;/label&gt;
+  &lt;input type="checkbox" name="hobby" value="Reading"&gt; Reading
+  &lt;input type="checkbox" name="hobby" value="Sports"&gt; Sports
+
+  &lt;label for="country"&gt;Country:&lt;/label&gt;
+  &lt;select id="country" name="country"&gt;
+    &lt;option value="India"&gt;India&lt;/option&gt;
+    &lt;option value="USA"&gt;USA&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label for="message"&gt;Message:&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="4" placeholder="Write your message"&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+    </div>
+
+    <div class="section">
+      <h2>🎯 Best Practices</h2>
+      <ul>
+        <li>Always use <strong>label</strong> for input fields for accessibility.</li>
+        <li>Use proper input types (email, number, date) for validation.</li>
+        <li>Use <strong>required</strong> attribute for mandatory fields.</li>
+        <li>Group radio buttons with the same <strong>name</strong>.</li>
+        <li>Use <strong>placeholder</strong> for hints, but not as a replacement for labels.</li>
+        <li>Keep forms concise and user-friendly.</li>
+      </ul>
+    </div>
+
+    <div class="nav">
+      <a href="slide10.html" class="btn">← Previous</a>
+      <a href="slide12.html" class="btn">Next →</a>
+    </div>
+
+    <div class="footer-note">Slide 11 – HTML Forms</div>
+  </div>
+</body>
+</html>

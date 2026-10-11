@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Slide 2 – HTML Structure</title>
+  <style>
+    /* ---------- Base Layout ---------- */
+    body {
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .slide {
+      background: #ffffff;
+      width: 92%;
+      max-width: 1000px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+      padding: 40px 50px;
+      animation: fadeIn 0.8s ease;
+      position: relative;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- Logo ---------- */
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .logo img {
+      max-height: 60px;
+      width: auto;
+    }
+
+    /* ---------- Typography ---------- */
+    h1 {
+      text-align: center;
+      font-size: 2.3rem;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #0369a1;
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+    p, li {
+      line-height: 1.7;
+      font-size: 1.02rem;
+    }
+    ul { margin-left: 20px; }
+
+    /* ---------- Section Cards ---------- */
+    .section {
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      margin-top: 15px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    /* ---------- Code Block ---------- */
+    pre {
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    /* ---------- Footer Navigation ---------- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .btn {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    .btn:hover { background: #0369a1; }
+    .footer-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .slide { padding: 30px 24px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="scalive.png" alt="scalive Logo">
+    </div>
+
+    <h1>HTML Structure</h1>
+
+    <div class="section">
+      <h2>🧩 Basic HTML Document</h2>
+      <p>Every HTML page follows a standard structure that organizes content for browsers.</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Main Heading&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+
+    <div class="section">
+      <h2>📖 Explanation of Tags</h2>
+      <ul>
+        <li><strong>&lt;!DOCTYPE html&gt;</strong> → Declares document type and HTML version.</li>
+        <li><strong>&lt;html&gt;</strong> → Root element of the webpage.</li>
+        <li><strong>&lt;head&gt;</strong> → Contains metadata, links, and page title.</li>
+        <li><strong>&lt;title&gt;</strong> → Sets the title shown in the browser tab.</li>
+        <li><strong>&lt;body&gt;</strong> → Contains visible content like headings, paragraphs, images, and links.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🎯 Tips for HTML Structure</h2>
+      <ul>
+        <li>Always use proper indentation for readability.</li>
+        <li>Use semantic tags like <strong>&lt;header&gt;</strong>, <strong>&lt;footer&gt;</strong>, <strong>&lt;section&gt;</strong> for meaningful structure.</li>
+        <li>Close all tags properly to avoid rendering issues.</li>
+      </ul>
+    </div>
+
+    <div class="nav">
+      <a href="slide1.html" class="btn">← Previous</a>
+      <a href="slide3.html" class="btn">Next →</a>
+    </div>
+
+    <div class="footer-note">Slide 2 – HTML Structure</div>
+  </div>
+</body>
+</html>
